@@ -21,7 +21,15 @@ have been added and the resulting warnings have been handled in the code.
 
 ## Installation and Use
 
-To build this tool, you will need a git and a c++ compiler.
+### Build iwith MSVC
+
+Clone the repo, locate and open the usual Visual Studio workspace.
+Rebuild solution in `Release`mode. Use the resulting file `elf2uf2.exe`
+on your elf binary to prepare it for the RP2040.
+
+### Build in `*nix`
+
+To build this tool in a `*nix`-like environment, you will need a git and a c++ compiler.
 
 Clone the repo, (assuming you are using g++) compile the tool, and use it on
 your elf binary.
