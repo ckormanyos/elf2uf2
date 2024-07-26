@@ -15,9 +15,9 @@ appears.
 
 ## Further modification
 
-This fork has been modified to include an MSVC vs2022 workspace
-and also to adapt the Makefile for MinGW. Enhanced compiler warnings have
-been added and handled in the code.
+This fork has been modified to include an MSVC vs2022 workspace.
+It has also adapted the Makefile for MinGW. Enhanced compiler warnings
+have been added and the resulting warnings have been handled in the code.
 
 ## Installation and Use
 
