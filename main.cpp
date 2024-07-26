@@ -4,24 +4,29 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#if defined(_MSC_VER)
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
+#include <elf.h>
+#include <uf2.h>
+
+#include <algorithm>
+#include <cstdarg>
 #include <cstdio>
+#include <cstring>
 #include <map>
 #include <vector>
-#include <cstring>
-#include <cstdarg>
-#include <algorithm>
-#include "uf2.h"
-#include "elf.h"
 
 typedef unsigned int uint;
 
-#define ERROR_ARGS -1
-#define ERROR_FORMAT -2
+#define ERROR_ARGS         -1
+#define ERROR_FORMAT       -2
 #define ERROR_INCOMPATIBLE -3
-#define ERROR_READ_FAILED -4
+#define ERROR_READ_FAILED  -4
 #define ERROR_WRITE_FAILED -5
 
-static char error_msg[512];
+static char error_msg[512U];
 static bool verbose;
 
 static int fail(int code, const char *format, ...) {
@@ -50,9 +55,9 @@ struct address_range {
         NO_CONTENTS,  // must be uninitialized
         IGNORE        // will be ignored
     };
-    address_range(uint32_t from, uint32_t to, type type) : from(from), to(to), type(type) {}
+    address_range(uint32_t from_, uint32_t to_, type type_) : type(type_), to(to_), from(from_) {}
     address_range() : address_range(0, 0, IGNORE) {}
-    type type;
+    type     type;
     uint32_t to;
     uint32_t from;
 };
@@ -143,7 +148,7 @@ int read_and_check_elf32_ph_entries(FILE *in, const elf32_header &eh, const addr
     }
     if (eh.ph_num) {
         std::vector<elf32_ph_entry> entries(eh.ph_num);
-        if (fseek(in, eh.ph_offset, SEEK_SET)) {
+        if (fseek(in, static_cast<long>(eh.ph_offset), SEEK_SET)) {
             return fail_read_error();
         }
         if (eh.ph_num != fread(&entries[0], sizeof(struct elf32_ph_entry), eh.ph_num, in)) {
@@ -201,8 +206,8 @@ int read_and_check_elf32_ph_entries(FILE *in, const elf32_header &eh, const addr
 int realize_page(FILE *in, const std::vector<page_fragment> &fragments, uint8_t *buf, uint buf_len) {
     assert(buf_len >= PAGE_SIZE);
     for(auto& frag : fragments) {
-        assert(frag.page_offset >= 0 && frag.page_offset < PAGE_SIZE && frag.page_offset + frag.bytes <= PAGE_SIZE);
-        if (fseek(in, frag.file_offset, SEEK_SET)) {
+        assert(frag.page_offset < PAGE_SIZE && frag.page_offset + frag.bytes <= PAGE_SIZE);
+        if (fseek(in, static_cast<long>(frag.file_offset), SEEK_SET)) {
             return fail_read_error();
         }
         if (1 != fread(buf + frag.page_offset, frag.bytes, 1, in)) {
@@ -212,15 +217,6 @@ int realize_page(FILE *in, const std::vector<page_fragment> &fragments, uint8_t 
     return 0;
 }
 
-static bool is_address_valid(const address_ranges& valid_ranges, uint32_t addr) {
-    for(const auto& range : valid_ranges) {
-        if (range.from <= addr && range.to > addr) {
-            return true;
-        }
-    }
-    return false;
-}
-
 static bool is_address_initialized(const address_ranges& valid_ranges, uint32_t addr) {
     for(const auto& range : valid_ranges) {
         if (range.from <= addr && range.to > addr) {
@@ -228,13 +224,6 @@ static bool is_address_initialized(const address_ranges& valid_ranges, uint32_t 
         }
     }
     return false;
-}
-
-static bool is_address_mapped(const std::map<uint32_t, std::vector<page_fragment>>& pages, uint32_t addr) {
-    uint32_t page = addr & ~(PAGE_SIZE - 1);
-    if (!pages.count(page)) return false;
-    // todo check actual address within page
-    return true;
 }
 
 int elf2uf2(FILE *in, FILE *out) {

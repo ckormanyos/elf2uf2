@@ -13,6 +13,12 @@ then be loaded onto the pico via. holding the bootselect button when plugging in
 the usb cable, and copying the firmware into the mass storage device that
 appears.
 
+## Further modification
+
+This fork has been modified to include an MSVC vs2022 workspace
+and also to adapt the Makefile for MinGW. Enhanced compiler warnings have
+been added and handled in the code.
+
 ## Installation and Use
 
 To build this tool, you will need a git and a c++ compiler.

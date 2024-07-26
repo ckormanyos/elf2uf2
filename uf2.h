@@ -7,8 +7,18 @@
 #ifndef _BOOT_UF2_H
 #define _BOOT_UF2_H
 
-#include <stdint.h>
+#if defined(__cplusplus)
+#include <cassert>
+#include <cstdint>
+#else
 #include <assert.h>
+#include <stdint.h>
+#endif
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
 
 /** \file uf2.h
 *  \defgroup boot_uf2 boot_uf2
@@ -42,5 +52,9 @@ struct uf2_block {
 };
 
 static_assert(sizeof(struct uf2_block) == 512, "uf2_block not sector sized");
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif 

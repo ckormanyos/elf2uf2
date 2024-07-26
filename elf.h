@@ -7,7 +7,16 @@
 #ifndef _ELF_H
 #define _ELF_H
 
+#if defined(__cplusplus)
+#include <cstdint>
+#else
 #include <stdint.h>
+#endif
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
 
 #define ELF_MAGIC 0x464c457fu
 
@@ -56,5 +65,9 @@ struct elf32_ph_entry {
     uint32_t align;
 };
 #pragma pack(pop)
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif
