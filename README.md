@@ -21,10 +21,10 @@ have been added and the resulting warnings have been handled in the code.
 
 ## Installation and Use
 
-### Build iwith MSVC
+### Build with MSVC
 
 Clone the repo, locate and open the usual Visual Studio workspace.
-Rebuild solution in `Release`mode. Use the resulting file `elf2uf2.exe`
+Rebuild the solution in `Release` mode. Use the resulting file `elf2uf2.exe`
 on your elf binary to prepare it for the RP2040.
 
 ### Build in `*nix`
