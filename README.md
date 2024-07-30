@@ -4,6 +4,8 @@ elf2uf2
 <p align="left">
     <a href="https://github.com/ckormanyos/elf2uf2/actions">
         <img src="https://github.com/ckormanyos/elf2uf2/actions/workflows/elf2uf2.yml/badge.svg" alt="build"></a>
+    <a href="https://github.com/ckormanyos/elf2uf2/blob/main/LICENSE.TXT">
+        <img src="https://img.shields.io/badge/license-BSD-Clause-3-blue.svg" alt="BSD-Clause-3"></a>
 </p>
 
 # Raspberry Pi Pico elf2uf2 Utility
