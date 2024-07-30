@@ -9,7 +9,10 @@ elf2uf2
 # Raspberry Pi Pico elf2uf2 Utility
 
 __DISCLAIMER__: The code files in this repository are not my work, and have been
-produced by the [Raspberry Pi Foundation](https://github.com/raspberrypi)
+produced by the [Raspberry Pi Foundation](https://github.com/raspberrypi).
+
+This repository has been forked (and modified) from
+[rej696/elf2uf2](https://github.com/rej696/elf2uf2).
 
 This repository copies code from the
 [Raspberry Pi Pico SDK](https://github.com/raspberrypi/pico-sdk)
@@ -28,7 +31,7 @@ This fork has been modified to include an MSVC vs2022 workspace.
 It has also adapted the Makefile for MinGW. Enhanced compiler warnings
 have been added (when using GCC). The resulting warnings have been handled in the code.
 
-## Installation and Use
+## Installation and use
 
 ### Build with MSVC
 
@@ -57,3 +60,7 @@ For a more detailed guide to using Alire and compiling Ada for see my
 Alternatively to using the elf2uf2 utility, you may wish to use
 [pico-debug](https://github.com/majbthrd/pico-debug), which allows gdb debugging
 and uploading of an elf file over USB, rather than Serial Wire Debug (SWD).
+
+### Continuous integration
+
+Continuous integration runs on GHA using `ubuntu-latest` and `macos-latest` runners.
