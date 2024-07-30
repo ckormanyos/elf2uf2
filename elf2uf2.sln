@@ -16,6 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{C45D9A
 		Makefile = Makefile
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C986F3A5-B446-4F33-A660-43AF17014714}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{88D171A8-38F5-41D9-9280-1ABA64F6293E}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\elf2uf2.yml = .github\workflows\elf2uf2.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +48,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88D171A8-38F5-41D9-9280-1ABA64F6293E} = {C986F3A5-B446-4F33-A660-43AF17014714}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82A0F1D0-CA7A-4CDC-A039-E45DAB2FB7E1}

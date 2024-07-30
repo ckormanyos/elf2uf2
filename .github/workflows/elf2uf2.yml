@@ -1,0 +1,41 @@
+##############################################################################
+#  Copyright Christopher Kormanyos 2024.
+#  Distributed under BSD-3-Clause.
+
+name: elf2uf2
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+jobs:
+  elf2uf2-build-native:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+      - name: build-and-verify-elf2uf2
+        run: |
+          echo 'build-and-verify-elf2uf2'
+          echo
+          make all
+          ls -la ./bin/elf2uf2
+  elf2uf2-build-native-macos:
+    runs-on: macos-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+      - name: build-and-verify-elf2uf2
+        run: |
+          echo 'build-and-verify-elf2uf2'
+          echo
+          make all
+          ls -la ./bin/elf2uf2

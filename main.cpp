@@ -86,7 +86,7 @@ const address_ranges rp2040_address_ranges_ram {
 };
 
 struct page_fragment {
-    page_fragment(uint32_t file_offset, uint32_t page_offset, uint32_t bytes) : file_offset(file_offset), page_offset(page_offset), bytes(bytes) {}
+    page_fragment(uint32_t file_ofs, uint32_t page_ofs, uint32_t by) : file_offset(file_ofs), page_offset(page_ofs), bytes(by) {}
     uint32_t file_offset;
     uint32_t page_offset;
     uint32_t bytes;

@@ -3,8 +3,9 @@
 __DISCLAIMER__: The code files in this repository are not my work, and have been
 produced by the [Raspberry Pi Foundation](https://github.com/raspberrypi)
 
-This repository copies code from the [Raspberry Pi Pico
-SDK](https://github.com/raspberrypi/pico-sdk) for building the elf2uf2 utility.
+This repository copies code from the
+[Raspberry Pi Pico SDK](https://github.com/raspberrypi/pico-sdk)
+for building the `elf2uf2` utility.
 
 This utility allows elf files compiled for the pico, either using the pico-sdk
 or using the [pico_bsp](https://github.com/JeremyGrosser/pico_bsp) on
@@ -17,7 +18,7 @@ appears.
 
 This fork has been modified to include an MSVC vs2022 workspace.
 It has also adapted the Makefile for MinGW. Enhanced compiler warnings
-have been added and the resulting warnings have been handled in the code.
+have been added (when using GCC). The resulting warnings have been handled in the code.
 
 ## Installation and Use
 
