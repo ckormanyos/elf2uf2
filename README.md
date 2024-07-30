@@ -27,11 +27,12 @@ then be loaded onto the pico via. holding the bootselect button when plugging in
 the usb cable, and copying the firmware into the mass storage device that
 appears.
 
-## Further modification
+## Further modifications
 
-This fork has been modified to include an MSVC vs2022 workspace.
-It has also adapted the Makefile for MinGW. Enhanced compiler warnings
-have been added (when using GCC). The resulting warnings have been handled in the code.
+  - This fork has been modified to include an MSVC vs2022 workspace.
+  - It has also adapted the Makefile to be used on either Linux, MacOS or MinGW.
+  - Enhanced compiler warnings have been added (when using GCC). The resulting warnings have been handled in the code.
+  - Continuous integration on GHA has been added.
 
 ## Installation and use
 
@@ -49,7 +50,7 @@ Clone the repo, (assuming you are using g++) compile the tool, and use it on
 your elf binary.
 
 ```bash
-git clone https://github.com/rej696/elf2uf2.git
+git clone https://github.com/ckormanyos/elf2uf2.git
 make build # or run your native compiler command
 ./elf2uf2 <input ELF file> <output UF2 file>
 ```
