@@ -49,9 +49,12 @@ To build this tool in a `*nix`-like environment, you will need a git and a c++ c
 Clone the repo, (assuming you are using g++) compile the tool, and use it on
 your elf binary.
 
+When using the [`Makefile`](https://github.com/ckormanyos/elf2uf2/blob/main/Makefile),
+the build results can be found in a temporary directory called `bin`.
+
 ```bash
 git clone https://github.com/ckormanyos/elf2uf2.git
-make build # or run your native compiler command
+make all # or run your native compiler command
 ./elf2uf2 <input ELF file> <output UF2 file>
 ```
 
