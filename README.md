@@ -1,3 +1,11 @@
+elf2uf2
+==================
+
+<p align="left">
+    <a href="https://github.com/ckormanyos/elf2uf2/actions">
+        <img src="https://github.com/ckormanyos/elf2uf2/actions/workflows/elf2uf2.yml/badge.svg" alt="build"></a>
+</p>
+
 # Raspberry Pi Pico elf2uf2 Utility
 
 __DISCLAIMER__: The code files in this repository are not my work, and have been
