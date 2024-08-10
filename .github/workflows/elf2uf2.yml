@@ -24,6 +24,10 @@ jobs:
           echo
           make all
           ls -la ./bin/elf2uf2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elf2uf2-x86_64-linux-gnu
+          path: ./bin/elf2uf2
   elf2uf2-build-native-macos:
     runs-on: macos-latest
     defaults:
@@ -39,3 +43,27 @@ jobs:
           echo
           make all
           ls -la ./bin/elf2uf2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elf2uf2-macos
+          path: ./bin/elf2uf2
+  msvc-release-x64:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+      - uses: actions/checkout@v1
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          toolset: 14.2
+      - name: msvc-release-x64
+        shell: cmd
+        working-directory: ./
+        run: |
+          MSBuild -m elf2uf2.sln -p:useenv=true -p:Configuration=Release -p:Platform=x64 /t:Rebuild
+          dir %cd%\x64\Release\elf2uf2.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elf2uf2-win64-msvc
+          path: x64/Release/elf2uf2.exe
