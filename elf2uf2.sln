@@ -26,25 +26,13 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		MinGW|x64 = MinGW|x64
-		MinGW|x86 = MinGW|x86
 		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Debug|x64.ActiveCfg = Debug|x64
 		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Debug|x64.Build.0 = Debug|x64
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Debug|x86.ActiveCfg = Debug|Win32
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Debug|x86.Build.0 = Debug|Win32
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.MinGW|x64.ActiveCfg = MinGW|x64
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.MinGW|x64.Build.0 = MinGW|x64
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.MinGW|x86.ActiveCfg = MinGW|Win32
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.MinGW|x86.Build.0 = MinGW|Win32
 		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Release|x64.ActiveCfg = Release|x64
 		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Release|x64.Build.0 = Release|x64
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Release|x86.ActiveCfg = Release|Win32
-		{28A876EE-AFC7-4C96-AA7B-03B45DA3132B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
