@@ -61,6 +61,7 @@ jobs:
         shell: cmd
         working-directory: ./
         run: |
+          set INCLUDE=%cd%;%INCLUDE%
           MSBuild -m elf2uf2.sln -p:useenv=true -p:Configuration=Release -p:Platform=x64 /t:Rebuild
           dir %cd%\x64\Release\elf2uf2.exe
       - uses: actions/upload-artifact@v4
