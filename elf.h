@@ -27,7 +27,8 @@ extern "C"
 #define PT_LOAD 0x00000001u
 
 #pragma pack(push, 1)
-struct elf_header {
+  struct elf_header
+  {
     uint32_t    magic;
     uint8_t     arch_class;
     uint8_t     endianness;
@@ -38,9 +39,10 @@ struct elf_header {
     uint16_t    type;
     uint16_t    machine;
     uint32_t    version2;
-};
+  };
 
-struct elf32_header {
+  struct elf32_header
+  {
     struct elf_header common;
     uint32_t    entry;
     uint32_t    ph_offset;
@@ -52,9 +54,10 @@ struct elf32_header {
     uint16_t    sh_entry_size;
     uint16_t    sh_num;
     uint16_t    sh_str_index;
-};
+  };
 
-struct elf32_ph_entry {
+  struct elf32_ph_entry
+  {
     uint32_t type;
     uint32_t offset;
     uint32_t vaddr;
@@ -63,7 +66,7 @@ struct elf32_ph_entry {
     uint32_t memsz;
     uint32_t flags;
     uint32_t align;
-};
+  };
 #pragma pack(pop)
 
 #if defined(__cplusplus)
