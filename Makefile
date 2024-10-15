@@ -95,14 +95,14 @@ all: build
 # Rules
 #######################################################################
 
-build: main.cpp
+build: elf2uf2.cpp
 	@-$(GNUECHO) +++ print compiler version
 	@-$(CC) -v
 	@-$(GNUECHO)
-	@-$(GNUECHO) +++ compiling main.cpp and linking to bin/elf2uf2$(EXEEXT)
+	@-$(GNUECHO) +++ compiling elf2uf2.cpp and linking to bin/elf2uf2$(EXEEXT)
 	@-$(GNUECHO)
 	@-$(MKDIR) -p bin
 	@-$(RM) -rf bin
 	@-$(MKDIR) -p bin
-	@-$(CC) $(CXXFLAGS) main.cpp -o bin/elf2uf2$(EXEEXT)
+	@-$(CC) $(CXXFLAGS) elf2uf2.cpp -o bin/elf2uf2$(EXEEXT)
 	@-$(GNUECHO)
