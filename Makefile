@@ -95,7 +95,7 @@ all: build
 # Rules
 #######################################################################
 
-build: elf2uf2.cpp
+build: main.cpp
 	@-$(GNUECHO) +++ print compiler version
 	@-$(CC) -v
 	@-$(GNUECHO)
