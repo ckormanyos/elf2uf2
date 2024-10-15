@@ -86,7 +86,7 @@
     <ClInclude Include="uf2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="elf2uf2.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
