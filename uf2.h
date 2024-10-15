@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#ifndef _BOOT_UF2_H
-#define _BOOT_UF2_H
+#ifndef BOOT_UF2_2024_10_15_H
+#define BOOT_UF2_2024_10_15_H
 
 #if defined(__cplusplus)
 #include <cassert>
@@ -58,4 +58,4 @@ extern "C"
 }
 #endif
 
-#endif
+#endif // BOOT_UF2_2024_10_15_H

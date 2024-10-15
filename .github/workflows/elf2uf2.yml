@@ -48,7 +48,7 @@ jobs:
           name: elf2uf2-macos
           path: ./bin/elf2uf2
   msvc-release-x64:
-    runs-on: windows-2022
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:

@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#ifndef _ELF_H
-#define _ELF_H
+#ifndef ELF_2024_10_15_H
+#define ELF_2024_10_15_H
 
 #if defined(__cplusplus)
 #include <cstdint>
@@ -73,4 +73,4 @@ extern "C"
 }
 #endif
 
-#endif
+#endif // ELF_2024_10_15_H
