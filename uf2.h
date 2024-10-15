@@ -20,11 +20,11 @@ extern "C"
 {
 #endif
 
-/** \file uf2.h
-*  \defgroup boot_uf2 boot_uf2
-*
-* Header file for the UF2 format supported by an RP2040 in BOOTSEL mode.
-*/
+  /** \file uf2.h
+  *  \defgroup boot_uf2 boot_uf2
+  *
+  * Header file for the UF2 format supported by an RP2040 in BOOTSEL mode.
+  */
 
 #define UF2_MAGIC_START0 0x0A324655u
 #define UF2_MAGIC_START1 0x9E5D5157u
@@ -37,7 +37,8 @@ extern "C"
 
 #define RP2040_FAMILY_ID 0xe48bff56
 
-struct uf2_block {
+  struct uf2_block
+  {
     // 32 byte header
     uint32_t magic_start0;
     uint32_t magic_start1;
@@ -49,12 +50,12 @@ struct uf2_block {
     uint32_t file_size; // or familyID;
     uint8_t  data[476];
     uint32_t magic_end;
-};
+  };
 
-static_assert(sizeof(struct uf2_block) == 512, "uf2_block not sector sized");
+  static_assert(sizeof(struct uf2_block) == 512, "uf2_block not sector sized");
 
 #if defined(__cplusplus)
 }
 #endif
 
-#endif 
+#endif
